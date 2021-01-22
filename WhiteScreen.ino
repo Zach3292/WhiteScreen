@@ -4,7 +4,6 @@ const int potPin = A0;
 
 
 int potValue = 0;
-int enValue = 0;
 int pwnValue = 0;
 
 void setup(){
@@ -13,5 +12,8 @@ void setup(){
 }
 
 void loop() {
-
+	digitalWrite(enPin, HIGH);
+	potValue = analogRead(potPin);
+	pwnValue = map(potValue, 0, 1023, 0, 255);
+	analogWrite(pwnPin, pwnValue);
 }
