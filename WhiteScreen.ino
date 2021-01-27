@@ -9,10 +9,11 @@ int pwnValue = 0;
 void setup(){
 	pinMode(enPin, OUTPUT);
 	pinMode(pwnPin, OUTPUT);
+	digitalWrite(enPin, HIGH);
 }
 
 void loop() {
-	digitalWrite(enPin, HIGH);
+
 	potValue = analogRead(potPin);
 	pwnValue = map(potValue, 0, 1023, 0, 255);
 	analogWrite(pwnPin, pwnValue);
